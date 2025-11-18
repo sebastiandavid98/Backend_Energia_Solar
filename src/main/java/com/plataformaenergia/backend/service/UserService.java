@@ -2,10 +2,9 @@ package com.plataformaenergia.backend.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import com.plataformaenergia.backend.model.User;
 import com.plataformaenergia.backend.repository.UserRepository;
-
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -19,6 +18,9 @@ public class UserService {
     }
 
     public User createUser(User user) {
+        if (user.getTimestamp() == null) {
+            user.setTimestamp(LocalDateTime.now());
+        }
         return userRepository.save(user);
     }
 
