@@ -1,0 +1,16 @@
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\BackendApplication.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\config\OpenApiConfig.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\config\SecurityConfig.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\controller\EnergyController.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\controller\TestController.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\controller\TransactionController.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\controller\UserController.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\model\Energy.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\model\Transaction.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\model\User.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\repository\EnergyRepository.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\repository\TransactionRepository.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\repository\UserRepository.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\service\EnergyService.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\service\TransactionService.java
+C:\Users\Inge_Heidy\Documents\Plataforma de intercambio Energia Solar\Plataforma Energia Solar\backend\src\main\java\com\plataformaenergia\backend\service\UserService.java

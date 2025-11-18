@@ -2,6 +2,8 @@ package com.plataformaenergia.backend.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.LocalDateTime;
 
 @Document(collection = "energy")
 public class Energy {
@@ -9,10 +11,13 @@ public class Energy {
     private String id;
     private String ownerId;
     private double amountKwh;
-    private String timestamp;
+
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+    private LocalDateTime timestamp;
 
     public Energy() {}
-    public Energy(String ownerId, double amountKwh, String timestamp) {
+
+    public Energy(String ownerId, double amountKwh, LocalDateTime timestamp) {
         this.ownerId = ownerId;
         this.amountKwh = amountKwh;
         this.timestamp = timestamp;
@@ -24,6 +29,6 @@ public class Energy {
     public void setOwnerId(String ownerId) { this.ownerId = ownerId; }
     public double getAmountKwh() { return amountKwh; }
     public void setAmountKwh(double amountKwh) { this.amountKwh = amountKwh; }
-    public String getTimestamp() { return timestamp; }
-    public void setTimestamp(String timestamp) { this.timestamp = timestamp; }
+    public LocalDateTime getTimestamp() { return timestamp; }
+    public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }
 }

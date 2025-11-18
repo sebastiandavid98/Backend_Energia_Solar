@@ -3,6 +3,7 @@ package com.plataformaenergia.backend.service;
 import com.plataformaenergia.backend.model.Transaction;
 import com.plataformaenergia.backend.repository.TransactionRepository;
 import org.springframework.stereotype.Service;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,6 +24,9 @@ public class TransactionService {
     }
 
     public Transaction createTransaction(Transaction transaction) {
+        if (transaction.getTimestamp() == null) {
+            transaction.setTimestamp(LocalDateTime.now());
+        }
         return transactionRepository.save(transaction);
     }
 
