@@ -3,6 +3,7 @@ package com.plataformaenergia.backend.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.time.LocalDateTime;
 
 @Document(collection = "users")
@@ -13,6 +14,7 @@ public class User {
 
     private String name;
     private String email;
+    private String password;  // <-- añadido
     private String ownerId;
 
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
@@ -20,14 +22,14 @@ public class User {
 
     public User() {}
 
-    public User(String name, String email, String ownerId, LocalDateTime timestamp) {
+    public User(String name, String email, String password, String ownerId, LocalDateTime timestamp) {
         this.name = name;
         this.email = email;
+        this.password = password;
         this.ownerId = ownerId;
         this.timestamp = timestamp;
     }
 
-    // Getters y setters
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
@@ -36,6 +38,9 @@ public class User {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
 
     public String getOwnerId() { return ownerId; }
     public void setOwnerId(String ownerId) { this.ownerId = ownerId; }
