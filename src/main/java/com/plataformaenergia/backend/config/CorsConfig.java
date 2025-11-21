@@ -14,7 +14,11 @@
                 @Override
                 public void addCorsMappings(CorsRegistry registry) {
                     registry.addMapping("/**")
-                            .allowedOrigins("http://localhost:5173") // Vite
+                            .allowedOrigins(
+                                "http://localhost:3000",  // Create React App
+                                "http://localhost:5173",  // Vite
+                                "https://frontend-energia-solar.onrender.com"  // Producción
+                            )
                             .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH")
                             .allowedHeaders("*")
                             .allowCredentials(true);
