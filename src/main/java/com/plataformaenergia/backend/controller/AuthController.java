@@ -45,7 +45,10 @@ public class AuthController {
 
         User saved = userRepository.save(user);
 
-        AuthResponse resp = new AuthResponse(null, saved);
+        // Generar token para el nuevo usuario
+        String token = "Bearer_" + saved.getId() + "_" + System.currentTimeMillis();
+
+        AuthResponse resp = new AuthResponse(token, saved);
         return ResponseEntity.ok(resp);
     }
 
@@ -65,10 +68,10 @@ public class AuthController {
 
         User user = userOpt.get();
 
-        // Aquí podríamos generar un JWT real, por ahora dejamos token vacío
-        String fakeToken = ""; // luego lo podemos cambiar por un JWT
+        // Token simple (en producción usar JWT real)
+        String token = "Bearer_" + user.getId() + "_" + System.currentTimeMillis();
 
-        AuthResponse resp = new AuthResponse(fakeToken, user);
+        AuthResponse resp = new AuthResponse(token, user);
         return ResponseEntity.ok(resp);
     }
 }
