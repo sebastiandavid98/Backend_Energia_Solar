@@ -1,36 +1,24 @@
 package com.plataformaenergia.backend.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.plataformaenergia.backend.model.Transaction;
 import com.plataformaenergia.backend.repository.TransactionRepository;
-import org.springframework.stereotype.Service;
-import java.time.LocalDateTime;
+
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TransactionService {
-    private final TransactionRepository transactionRepository;
 
-    public TransactionService(TransactionRepository transactionRepository) {
-        this.transactionRepository = transactionRepository;
+    @Autowired
+    private TransactionRepository repo;
+
+    public List<Transaction> getAll() {
+        return repo.findAll();
     }
 
-    public List<Transaction> getAllTransactions() {
-        return transactionRepository.findAll();
-    }
-
-    public Optional<Transaction> getTransactionById(String id) {
-        return transactionRepository.findById(id);
-    }
-
-    public Transaction createTransaction(Transaction transaction) {
-        if (transaction.getTimestamp() == null) {
-            transaction.setTimestamp(LocalDateTime.now());
-        }
-        return transactionRepository.save(transaction);
-    }
-
-    public void deleteTransaction(String id) {
-        transactionRepository.deleteById(id);
+    public Transaction save(Transaction tx) {
+        return repo.save(tx);
     }
 }

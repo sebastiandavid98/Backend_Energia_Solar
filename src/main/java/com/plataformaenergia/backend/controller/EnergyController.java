@@ -1,32 +1,27 @@
 package com.plataformaenergia.backend.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
+
 import com.plataformaenergia.backend.model.Energy;
-import com.plataformaenergia.backend.repository.EnergyRepository;
+import com.plataformaenergia.backend.service.EnergyService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/energy")
 public class EnergyController {
 
-    private final EnergyRepository repo;
-
-    public EnergyController(EnergyRepository repo) {
-        this.repo = repo;
-    }
+    @Autowired
+    private EnergyService energyService;
 
     @GetMapping
     public List<Energy> getAll() {
-        return repo.findAll();
+        return energyService.getAll();
     }
 
     @PostMapping
     public Energy create(@RequestBody Energy energy) {
-        return repo.save(energy);
-    }
-
-    @GetMapping("/{id}")
-    public Energy getById(@PathVariable String id) {
-        return repo.findById(id).orElse(null);
+        return energyService.save(energy);
     }
 }
